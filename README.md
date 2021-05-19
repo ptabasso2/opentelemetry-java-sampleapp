@@ -7,7 +7,6 @@ A detailed step-by-step tutorial showing how tracing can be implemented for a si
 issuing http calls to a http server. Both layers use the opentelemetry sdk and in this particular use case 
 we will show how context propagation is handled.   
 
-<br>
 
 ### Preliminary tasks and first time steps
 
@@ -18,6 +17,7 @@ Let's first create our project structure
 
 ```sh
 pejman@macosx:~ $ mkdir -p otel/opentelemetrylab otel/opentelemetry-collector-contrib
+pejman@macosx:~ $ cd otel
 pejman@macosx:~ $ ls -lrt
 drwxr-xr-x   8 pejman  staff     256 Apr 23 18:48 opentelemetrylab
 drwxr-xr-x   5 pejman  staff     160 Apr 23 18:48 opentelemetry-collector-contrib
@@ -26,7 +26,7 @@ drwxr-xr-x   5 pejman  staff     160 Apr 23 18:48 opentelemetry-collector-contri
 ***Clone this repository***
 
 ```sh
-pejman@macosx:~ $ cd opentelemetrylab
+pejman@macosx:~ otel $ cd opentelemetrylab
 pejman@macosx:~ opentelemetrylab $ git clone https://github.com/ptabasso2/opentelemetry-java-sampleapp.git
 ```
 
@@ -67,15 +67,15 @@ pejman@macosx:~ opentelemetrylab $ tree
 
 ```sh
 pejman@macosx:~ opentelemetrylab $ cd ../opentelemetry-collector-contrib
-pejman@macosx:~ opentelemetry-collector-contrib $ wget xxxxxxx
+pejman@macosx:~ opentelemetry-collector-contrib $ curl --output otelcontribcol_darwin_amd64 -O -L https://github.com/open-telemetry/opentelemetry-collector-contrib/releases/download/v0.27.0/otelcontribcol_darwin_amd64
+pejman@macosx:~ opentelemetry-collector-contrib $ chmod +x opentelemetry-collector-contrib
 ```
 
 
-### Configure the collector 
-
+### Configure the collector
 
 ```sh
-pejman@macosx:~ opentelemetry-collector-contrib $ cd bin
+pejman@macosx:~ opentelemetry-collector-contrib $ mkdir bin && cd bin
 pejman@macosx:~ bin $ vi conf.yaml
 ```
 
@@ -189,6 +189,10 @@ Served Client: /127.0.0.1:58434
 Response Code: 200
 Response Msg: Hello World!
 ```
+
+### Checking the results
+
+You can then navigate to `http://localhost:16686` to access the Jaeger UI.
 
 
 
