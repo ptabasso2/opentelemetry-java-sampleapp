@@ -18,7 +18,7 @@ Let's first create our project structure
 ```sh
 pejman@macosx:~ $ mkdir -p otel/opentelemetrylab otel/opentelemetry-collector-contrib
 pejman@macosx:~ $ cd otel
-pejman@macosx:~ $ ls -lrt
+pejman@macosx:~ otel $ ls -lrt
 drwxr-xr-x   8 pejman  staff     256 Apr 23 18:48 opentelemetrylab
 drwxr-xr-x   5 pejman  staff     160 Apr 23 18:48 opentelemetry-collector-contrib
 ```
