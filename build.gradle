@@ -15,7 +15,7 @@ repositories {
 
 jar {
     manifest {
-        attributes 'Main-Class':'io.opentelemetry.otlp.PejHttpClient'
+        attributes 'Main-Class':'io.opentelemetry.otlp.HttpClient'
     }
 }
 
