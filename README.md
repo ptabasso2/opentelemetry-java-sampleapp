@@ -196,6 +196,11 @@ Response Msg: Hello World!
 
 You can then navigate to `http://localhost:16686` to access the Jaeger UI.
 
+
+1. Checking the results in Datadog:
+<img src="img/OtelDDexample1.png" width="720" />
+
+2. Checking the results in Jaeger: 
 <img src="img/OtelJaegerexample1.png" width="720" />
 
 
