@@ -176,6 +176,15 @@ pejman@macosx:~ opentelemetrylab $ ./gradlew shadowJar
 ```
 
 This build the final artifact `otel-0.1.0.jar` placed under `$HOME/otel/opentelemetrylab/build/libs`
+<br><br> Also the default main class specified in this jar refers to `HttpClient`, therefore the client can be run on the command line using this syntax:
+```sh
+pejman@macosx:~ opentelemetrylab $ java -jar build/libs/otel-0.1.0.jar
+```
+Instead of
+
+```sh
+pejman@macosx:~ opentelemetrylab $ java -cp build/libs/otel-0.1.0.jar io.opentelemetry.otlp.HttpClient
+```
 
 
 ### Running and testing the app
