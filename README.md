@@ -196,6 +196,10 @@ Response Msg: Hello World!
 
 You can then navigate to `http://localhost:16686` to access the Jaeger UI.
 
+<br>
+Result should look like this:<br>
+
+<img src="img/OtelDDexample1.png" width="720" />
 
 
 
