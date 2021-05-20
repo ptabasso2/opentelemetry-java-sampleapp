@@ -7,6 +7,9 @@ A detailed step-by-step tutorial showing how tracing can be implemented for a si
 issuing http calls to a http server. Both layers use the opentelemetry sdk and in this particular use case 
 we will show how context propagation is handled.   
 
+<img src="img/OtelArch.png" width="720" />
+
+
 
 ### Preliminary tasks and first time steps
 
