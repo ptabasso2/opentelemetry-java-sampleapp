@@ -80,8 +80,8 @@ pejman@macosx:~ bin $ vi conf.yaml
 ```
 
 
-Below here is an example of conf.yaml file. Please make sure you are using your API key. 
-<br> The one below is redacted. 
+Below an example of conf.yaml file.
+<br>Please make sure you are using your API key. The one below is redacted. 
 <br>Copy paste the following lines to the conf.yaml file, save and exit. 
 
 ```sh
