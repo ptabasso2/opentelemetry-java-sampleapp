@@ -80,7 +80,8 @@ pejman@macosx:~ bin $ vi conf.yaml
 ```
 
 
-Below here is an example of conf.yaml file. 
+Below here is an example of conf.yaml file. Please make sure you are using your API key. 
+<br> The one below is redacted. 
 <br>Copy paste the following lines to the conf.yaml file, save and exit. 
 
 ```sh
@@ -111,7 +112,7 @@ exporters:
     tags:
       - example:tag
     api:
-      key: 6842ecd1xxxxxxxx2064xxxxxxxdd3c2
+      key: 9847ecd1xxxxxxxx2064xxxxxxxdd3c2
       site: datadoghq.com
 
 processors:
