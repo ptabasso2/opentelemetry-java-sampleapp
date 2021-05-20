@@ -70,7 +70,8 @@ pejman@macosx:~ opentelemetrylab $ cd ../opentelemetry-collector-contrib
 pejman@macosx:~ opentelemetry-collector-contrib $ curl --output otelcontribcol_darwin_amd64 -O -L https://github.com/open-telemetry/opentelemetry-collector-contrib/releases/download/v0.27.0/otelcontribcol_darwin_amd64
 pejman@macosx:~ opentelemetry-collector-contrib $ chmod +x opentelemetry-collector-contrib
 ```
-
+For a linux environment you will want to download the following binary
+`https://github.com/open-telemetry/opentelemetry-collector-contrib/releases/download/v0.27.0/otelcontribcol_linux_amd64`
 
 ### Configure the collector
 
