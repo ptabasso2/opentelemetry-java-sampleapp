@@ -8,6 +8,8 @@ description = 'OpenTelemetry Example for OTLP Exporters'
 group 'org.example'
 version '1.0-SNAPSHOT'
 
+apply plugin: 'maven'
+
 repositories {
     mavenCentral()
 }
