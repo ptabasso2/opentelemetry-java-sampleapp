@@ -102,7 +102,7 @@ exporters:
   logging:
 
   jaeger:
-    endpoint: jaeger:14250
+    endpoint: localhost:14250
     insecure: true
     
   datadog/api:
