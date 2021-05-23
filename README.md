@@ -40,29 +40,34 @@ pejman@macosx:~ opentelemetrylab $ git clone https://github.com/ptabasso2/opente
 pejman@macosx:~ opentelemetrylab $ tree
 .
 ├── README.md
-├── build
 ├── build.gradle
 ├── gradle
 │   └── wrapper
 │       ├── gradle-wrapper.jar
 │       └── gradle-wrapper.properties
 ├── gradlew
+├── img
+│   ├── OtelArch.png
+│   ├── OtelDDexample1.png
+│   └── OtelJaegerexample1.png
+├── pom.xml
 ├── settings.gradle
-└── src
-    ├── main
-    │   ├── java
-    │   │   └── io
-    │   │       └── opentelemetry
-    │   │           └── otlp
-    │   │               ├── ExampleConfiguration.java
-    │   │               ├── HttpClient.java
-    │   │               └── HttpServer.java
-    │   └── resources
-    └── test
-        ├── java
-        └── resources
+├── src
+    ├── main
+    │   ├── java
+    │   │   └── io
+    │   │       └── opentelemetry
+    │   │           └── otlp
+    │   │               ├── ExampleConfiguration.java
+    │   │               ├── HttpClient.java
+    │   │               └── HttpServer.java
+    │   └── resources
+    └── test
+        ├── java
+        └── resources
 
 ```
+
 
 
 ### Download and install the collector binaries
@@ -169,6 +174,11 @@ jaegertracing/all-in-one:1.22
 
 ### Build the application
 
+##### 1. Using gradle
+
+Gradle will by default create and produce the `build` folder and the artifact (jar) will be placed into the lib folder.     
+To execute the build, run the following command. Or in your IDE you can edit your build configurations and create one that relies on this command.
+
 ```sh
 pejman@macosx:~ bin $ cd ../../opentelemetrylab
 pejman@macosx:~ opentelemetrylab $
@@ -186,17 +196,35 @@ Instead of
 pejman@macosx:~ opentelemetrylab $ java -cp build/libs/otel-0.1.0.jar io.opentelemetry.otlp.HttpClient
 ```
 
+##### 2. Using Maven
+
+Maven will by default create and produce the `target` folder and the classes and the artifact (jar) will be placed at the root of this folder.
+To execute the build, run the following command. Or in your IDE you can edit your build configurations and create one that relies on this command.
+
+```sh
+pejman@macosx:~ opentelemetrylab $
+pejman@macosx:~ opentelemetrylab $ mvn clean compile assembly:single
+```
+
+or 
+
+```sh
+pejman@macosx:~ opentelemetrylab $
+pejman@macosx:~ opentelemetrylab $ mvn clean assembly:assembly
+```
+
+
 
 ### Running and testing the app
  
-1. Starting the Http server first.
+##### 1. Starting the Http server first.
 ```sh
 pejman@macosx:~ opentelemetrylab $ java -cp build/libs/otel-0.1.0.jar io.opentelemetry.otlp.HttpServer &
 [1] 602
 pejman@macosx:~ opentelemetrylab $ Server ready on http://127.0.0.1:8080
 ```
 
-2. Starting the Http client 
+##### 2. Starting the Http client 
 ```sh
 pejman@macosx:~ opentelemetrylab $ java -cp build/libs/otel-0.1.0.jar io.opentelemetry.otlp.HttpClient
 Served Client: /127.0.0.1:58434
@@ -209,10 +237,10 @@ Response Msg: Hello World!
 You can then navigate to `http://localhost:16686` to access the Jaeger UI.
 
 
-1. Checking the results in Datadog:
+##### 1. Checking the results in Datadog:
 <img src="img/OtelDDexample1.png" width="720" />
 
-2. Checking the results in Jaeger: 
+##### 2. Checking the results in Jaeger: 
 <img src="img/OtelJaegerexample1.png" width="720" />
 
 
